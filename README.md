@@ -19,3 +19,19 @@ Your task is to create a PHP application that is a feeds reader. The app can rea
 3. Use git flow to manage branches on your repository
 4. Open a pull request to `master` branch after done.
 5. The implementation should covered by Unit Test or Functional Test.
+
+## How to install source
+1. Create database name: ```import_feed```
+2. Copy ```.env.example``` to ```.env``` and config file the same your server's config.
+3. In terminal, run `composer install` to install dependencies package of Laravel.
+4. In terminal, run `php artisan migrate` to install database structure.
+5. In terminal, run `php artisan db:seed` to migrate example database.
+6. In terminal, run `php artisan key:generate` to generate your application encryption key
+7. In terminal, run `php artisan serve` to create a server.
+8. Login with username: `admin@gmail.com` and password `secret` 
+
+## How to use import feed command line
+1. In terminal, run `php artisan import:SampleFeeds <url1>,<url2>,<urln> --logfile` to import data and write log into a laravel file. 
+
+> **Example 1**: `php artisan import:SampleFeeds https://www.feedforall.com/sample.xml` without logfile.<br />
+> **Example 2**: `php artisan import:SampleFeeds https://www.feedforall.com/sample.xml --logfile` with logfile.
